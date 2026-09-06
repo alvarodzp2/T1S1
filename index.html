@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Interfaz web para registrar y gestionar incidentes de ciberseguridad de PUCE">
+
+  <title>Monitoreo PUCE | Gestión de incidentes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">
+    Saltar al contenido principal
+  </a>
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a class="brand" href="#inicio" aria-label="Monitoreo PUCE, inicio">
+        <span class="brand-logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect
+              width="22"
+              height="22"
+              rx="6"
+              fill="white"
+              fill-opacity=".15"
+            />
+            <path
+              d="M11 3L19 7.5V14.5L11 19L3 14.5V7.5L11 3Z"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+            <circle cx="11" cy="11" r="2.5" fill="white"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <strong>Monitoreo PUCE</strong>
+          <small>Centro de Seguridad</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#incidentes">Incidentes</a>
+        <a href="#detalle">Detalle</a>
+        <a href="#registrar">Registrar</a>
+      </nav>
+
+      <div class="header-status" aria-label="Estado del sistema: activo">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Sistema activo</span>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+
+      <div class="hero-content">
+
+        <p class="section-tag">
+          Centro de operaciones
+        </p>
+
+        <h1 id="titulo-principal">
+          Gestión de incidentes
+          de ciberseguridad
+        </h1>
+
+        <p class="hero-text">
+          Registra información sobre eventos de seguridad para
+          facilitar su clasificación y posterior seguimiento.
+        </p>
+
+        <a class="btn btn-primary" href="#registrar">
+          Registrar incidente
+        </a>
+
+      </div>
+      <aside class="hero-info" aria-labelledby="info-title">
+
+        <h2 id="info-title">
+          Antes de reportar
+        </h2>
+
+        <p>
+          Proporciona información clara sobre lo ocurrido y evita
+          incluir contraseñas o datos sensibles.
+        </p>
+
+        <dl class="quick-info">
+
+          <div>
+            <dt>Prioridad</dt>
+            <dd>Según impacto</dd>
+          </div>
+
+          <div>
+            <dt>Descripción</dt>
+            <dd>Hechos observables</dd>
+          </div>
+
+          <div>
+            <dt>Evidencia</dt>
+            <dd>Opcional</dd>
+          </div>
+
+        </dl>
+
+      </aside>
+
+    </section>
+    <section
+      class="section"
+      id="incidentes"
+      aria-labelledby="incidentes-title"
+    >
+
+      <div class="section-heading">
+
+        <div>
+          <p class="section-tag">
+            Seguimiento
+          </p>
+
+          <h2 id="incidentes-title">
+            Incidentes recientes
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="incident-grid">
+        <!-- INCIDENTE 1 -->
+        <article class="incident-card">
+
+          <header>
+            <span class="badge critical">
+              Crítico
+            </span>
+
+            <time datetime="2026-09-05T09:42">
+              05 sep. 2026
+            </time>
+          </header>
+
+          <h3>
+            Acceso no autorizado
+          </h3>
+
+          <p>
+            Intentos de acceso detectados desde una ubicación
+            no reconocida.
+          </p>
+
+          <footer>
+            <span>INC-2026-014</span>
+            <strong>En análisis</strong>
+          </footer>
+        </article>
+        <!-- INCIDENTE 2 -->
+        <article class="incident-card">
+
+          <header>
+            <span class="badge high">
+              Alto
+            </span>
+
+            <time datetime="2026-09-05T07:15">
+              05 sep. 2026
+            </time>
+          </header>
+
+          <h3>
+            Posible campaña de phishing
+          </h3>
+
+          <p>
+            Correo sospechoso reportado por colaboradores
+            del área financiera.
+          </p>
+
+          <footer>
+            <span>INC-2026-013</span>
+            <strong>Contención</strong>
+          </footer>
+
+        </article>
+        <!-- INCIDENTE 3 -->
+        <article class="incident-card">
+
+          <header>
+            <span class="badge medium">
+              Medio
+            </span>
+
+            <time datetime="2026-09-04T16:30">
+              04 sep. 2026
+            </time>
+          </header>
+
+          <h3>
+            Equipo sin actualización
+          </h3>
+
+          <p>
+            Dispositivo con parches de seguridad pendientes
+            de aplicar.
+          </p>
+
+          <footer>
+            <span>INC-2026-012</span>
+            <strong>Pendiente</strong>
+          </footer>
+
+        </article>
+
+      </div>
+
+    </section>
+    <!-- VISTA DE DETALLE -->
+    <section
+      class="section"
+      id="detalle"
+      aria-labelledby="detalle-title"
+    >
+
+      <div class="section-heading">
+
+        <div>
+          <p class="section-tag">
+            Consulta
+          </p>
+
+          <h2 id="detalle-title">
+            Detalle del incidente
+          </h2>
+        </div>
+
+      </div>
+
+
+      <article class="incident-detail">
+
+        <header>
+
+          <span class="badge critical">
+            Crítico
+          </span>
+
+          <span class="card-id">
+            INC-2026-014
+          </span>
+
+        </header>
+
+        <h3>
+          Acceso no autorizado
+        </h3>
+
+        <div class="detail-grid">
+
+          <div>
+            <strong>Tipo</strong>
+            <span>Acceso no autorizado</span>
+          </div>
+
+          <div>
+            <strong>Fecha</strong>
+            <time datetime="2026-09-05">
+              05 de septiembre de 2026
+            </time>
+          </div>
+
+          <div>
+            <strong>Estado</strong>
+            <span>En análisis</span>
+          </div>
+
+          <div>
+            <strong>Prioridad</strong>
+            <span>Crítica</span>
+          </div>
+
+        </div>
+
+        <div class="detail-description">
+
+          <h4>
+            Descripción
+          </h4>
+
+          <p>
+            Se detectaron varios intentos de acceso no autorizado
+            a una cuenta institucional desde una ubicación
+            no reconocida.
+          </p>
+
+        </div>
+
+      </article>
+
+    </section>
+    <!-- FORMULARIO -->
+    <section
+      class="section form-section"
+      id="registrar"
+      aria-labelledby="form-title"
+    >
+
+      <div class="section-heading form-heading">
+
+        <div>
+
+          <p class="section-tag">
+            Nuevo reporte
+          </p>
+
+          <h2 id="form-title">
+            Registrar un incidente
+          </h2>
+
+          <p>
+            Completa los datos principales del incidente.
+            Los campos marcados con * son obligatorios.
+          </p>
+
+        </div>
+
+        <p class="required-note">
+          <span aria-hidden="true">*</span>
+          Campos obligatorios
+        </p>
+
+      </div>
+
+      <form class="incident-form" action="" method="post">
+        <fieldset>
+          <legend>
+            Información del incidente
+          </legend>
+
+
+          <div class="form-grid">
+
+            <div class="field full">
+
+              <label for="titulo">
+                Título del incidente
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="titulo"
+                name="titulo"
+                type="text"
+                placeholder="Ej. Alerta de malware en estación de trabajo"
+                required
+                minlength="8"
+                maxlength="120"
+                autocomplete="off"
+                aria-describedby="ayuda-titulo"
+              >
+
+              <small id="ayuda-titulo">
+                Utiliza un título breve que permita identificar
+                el problema.
+              </small>
+
+            </div>
+
+            <div class="field">
+
+              <label for="tipo">
+                Tipo de incidente
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <select
+                id="tipo"
+                name="tipo"
+                required
+                aria-describedby="ayuda-tipo"
+              >
+
+                <option value="">
+                  Selecciona una categoría
+                </option>
+
+                <optgroup label="Amenazas externas">
+
+                  <option value="acceso">
+                    Acceso no autorizado
+                  </option>
+
+                  <option value="malware">
+                    Malware
+                  </option>
+
+                  <option value="phishing">
+                    Phishing
+                  </option>
+
+                  <option value="fuga">
+                    Fuga de información
+                  </option>
+
+                </optgroup>
+
+                <optgroup label="Vulnerabilidades">
+
+                  <option value="vulnerabilidad">
+                    Vulnerabilidad identificada
+                  </option>
+
+                  <option value="exposicion">
+                    Exposición de datos
+                  </option>
+
+                </optgroup>
+
+              </select>
+
+              <small id="ayuda-tipo">
+                Clasifica el origen o naturaleza del evento.
+              </small>
+
+            </div>
+
+            <div class="field">
+
+              <label for="prioridad">
+                Prioridad
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <select
+                id="prioridad"
+                name="prioridad"
+                required
+                aria-describedby="ayuda-prioridad"
+              >
+
+                <option value="">
+                  Selecciona prioridad
+                </option>
+
+                <option value="critica">
+                  Crítica — Acción inmediata
+                </option>
+
+                <option value="alta">
+                  Alta — Dentro de 4 horas
+                </option>
+
+                <option value="media">
+                  Media — Dentro de 24 horas
+                </option>
+
+                <option value="baja">
+                  Baja — Programar análisis
+                </option>
+
+              </select>
+
+              <small id="ayuda-prioridad">
+                Define la urgencia con la que debería revisarse.
+              </small>
+
+            </div>
+
+            <!-- FECHA -->
+            <div class="field">
+
+              <label for="fecha">
+                Fecha de detección
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="fecha"
+                name="fecha"
+                type="date"
+                required
+                aria-describedby="ayuda-fecha"
+              >
+
+              <small id="ayuda-fecha">
+                Indica cuándo fue identificado el incidente.
+              </small>
+
+            </div>
+
+            <!-- CORREO -->
+            <div class="field">
+
+              <label for="correo">
+                Correo de contacto
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <input
+                id="correo"
+                name="correo"
+                type="email"
+                placeholder="usuario@puce.edu.ec"
+                required
+                autocomplete="email"
+                aria-describedby="ayuda-correo"
+              >
+
+              <small id="ayuda-correo">
+                Se utilizará para futuras actualizaciones del caso.
+              </small>
+
+            </div>
+
+            <!-- DESCRIPCIÓN -->
+            <div class="field full">
+
+              <label for="descripcion">
+                Descripción del incidente
+                <span aria-hidden="true">*</span>
+              </label>
+
+              <textarea
+                id="descripcion"
+                name="descripcion"
+                rows="6"
+                placeholder="Describe qué ocurrió, cuándo lo detectaste y qué sistemas podrían estar involucrados..."
+                required
+                minlength="20"
+                maxlength="1000"
+                aria-describedby="ayuda-descripcion"
+              ></textarea>
+
+              <small id="ayuda-descripcion">
+                Incluye hechos observables.
+                <strong>
+                  No compartas contraseñas ni datos sensibles.
+                </strong>
+              </small>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+        <!-- EVIDENCIA -->
+        <fieldset>
+
+          <legend>
+            Evidencia
+            <span class="optional">
+              (opcional)
+            </span>
+          </legend>
+
+          <div class="field">
+
+            <label for="evidencia">
+              Adjuntar archivos
+            </label>
+
+            <input
+              id="evidencia"
+              name="evidencia"
+              type="file"
+              multiple
+              accept=".pdf,.png,.jpg,.jpeg,.log,.txt"
+              aria-describedby="ayuda-evidencia"
+            >
+
+            <small id="ayuda-evidencia">
+              Formatos permitidos: PDF, PNG, JPG, LOG o TXT.
+              Selecciona únicamente los archivos necesarios.
+            </small>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-actions">
+
+          <p class="form-note">
+            Revisa los datos antes de enviar el reporte.
+          </p>
+
+          <div class="action-buttons">
+
+            <button
+              class="btn btn-secondary"
+              type="reset"
+            >
+              Limpiar
+            </button>
+
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Enviar reporte
+            </button>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div>
+        <strong>Monitoreo PUCE</strong>
+        <span>Centro de Seguridad Institucional</span>
+      </div>
+
+      <p>
+        Proyecto T1S1
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
